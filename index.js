@@ -104,3 +104,24 @@ for (var i = 0; i < finances.length; i++) {
 }
 
 console.log('Total: $' + totalNet);
+
+
+
+// Average of the changes in Profit/Losses
+var previous_finances;
+
+var diff = [];
+for (var i = 0; i < finances.length; i++) {
+    if (i == 0) {
+        diff.push(0);
+    }
+    else {
+        diff.push(finances[i][1] - previous_finances);
+    }
+    previous_finances = finances[i][1];
+
+}
+
+console.log(diff);
+
+
